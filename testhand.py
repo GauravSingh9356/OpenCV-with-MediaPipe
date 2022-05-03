@@ -42,12 +42,14 @@ def initializeHand():
             fingers = []
     
             # Thumb
+            #explicit checking  
             if lmList[tipIds[0]][1] > lmList[tipIds[0] - 1][1]:
                 fingers.append(1)
             else:
                 fingers.append(0)
     
             # 4 Fingers
+            # checking the hieght and appending 1's which counts from no of finger opened 
             for id in range(1, 5):
                 if lmList[tipIds[id]][2] < lmList[tipIds[id] - 2][2]:
                     fingers.append(1)

@@ -16,6 +16,7 @@ import os
 from testPose import initializePose
 from testhand import initializeHand
 from faceDetector import initializeFace
+from GymTrainerAI import GymTraining
 
 def faceDetector():
    initializeFace()
@@ -28,15 +29,19 @@ def HandDetector():
    initializeHand()
 
 
+def GymTrainer():
+    GymTraining()
+   
+
 root = Tk()
-root.title("Real Time Hand, Pose, Face Detection")
+root.title("Real Time Hand, Pose, Face Detection & AI Gym Trainer")
 root.configure(bg="black")
-root.geometry("700x600")
+root.geometry("700x700")
 
 
 img = Image.open("image.png")
 
-img = img.resize((700, 300), Image.ANTIALIAS)
+img = img.resize((700, 350), Image.ANTIALIAS)
 test = ImageTk.PhotoImage(img)
 
 
@@ -53,7 +58,8 @@ b2.pack(pady=15)
 b3 =Button(root, text="Hand Detection",height=3, bg="#16FF01",relief="sunken", bd="3", command=HandDetector)
 b3.pack(pady=15)
 
-
+b4 =Button(root, text="Gym Trainer AI",height=3, bg="#16FF01",relief="sunken", bd="3", command=GymTrainer)
+b4.pack(pady=15)
 
 
 
